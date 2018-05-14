@@ -51,8 +51,8 @@ C:\Users\Nate\Dropbox\NUS GDipSA\SA4108 Mobile Application Development\WNET\gdip
 C:\Users\Nate\Dropbox\NUS GDipSA\SA4108 Mobile Application Development\WNET\gdipsa-aspnet\Day1\WebApplication1\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Nate\Dropbox\NUS GDipSA\SA4108 Mobile Application Development\WNET\gdipsa-aspnet\Day1\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Nate\Dropbox\NUS GDipSA\SA4108 Mobile Application Development\WNET\gdipsa-aspnet\Day1\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Nate\Dropbox\NUS GDipSA\SA4108 Mobile Application Development\WNET\gdipsa-aspnet\Day1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
 C:\Users\Nate\Dropbox\NUS GDipSA\SA4108 Mobile Application Development\WNET\gdipsa-aspnet\Day1\WebApplication1\obj\Debug\WebApplication1.csproj.CoreCompileInputs.cache
 C:\Users\Nate\Dropbox\NUS GDipSA\SA4108 Mobile Application Development\WNET\gdipsa-aspnet\Day1\WebApplication1\obj\Debug\WebApplication1.csproj.CopyComplete
 C:\Users\Nate\Dropbox\NUS GDipSA\SA4108 Mobile Application Development\WNET\gdipsa-aspnet\Day1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\Nate\Dropbox\NUS GDipSA\SA4108 Mobile Application Development\WNET\gdipsa-aspnet\Day1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\Nate\Dropbox\NUS GDipSA\SA4108 Mobile Application Development\WNET\gdipsa-aspnet\Day1\WebApplication1\obj\Debug\WebApplication1.csprojAssemblyReference.cache
