@@ -17,6 +17,7 @@
         <p>
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         </p>
+        <asp:FileUpload ID="FileUpload1" runat="server" />
     </form>
 </body>
 </html>

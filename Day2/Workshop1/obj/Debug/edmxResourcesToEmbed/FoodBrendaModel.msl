@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FoodBrendaModelStoreContainer" CdmEntityContainer="FoodBrendaEntities">
+    <EntitySetMapping Name="Dishes">
+      <EntityTypeMapping TypeName="FoodBrendaModel.Dish">
+        <MappingFragment StoreEntitySet="Dishes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DishOptions">
+      <EntityTypeMapping TypeName="FoodBrendaModel.DishOption">
+        <MappingFragment StoreEntitySet="DishOptions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OptionName" ColumnName="OptionName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DishSizes">
+      <EntityTypeMapping TypeName="FoodBrendaModel.DishSize">
+        <MappingFragment StoreEntitySet="DishSizes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="FoodBrendaModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="DishId" ColumnName="DishId" />
+          <ScalarProperty Name="DishSize" ColumnName="DishSize" />
+          <ScalarProperty Name="DishOption" ColumnName="DishOption" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

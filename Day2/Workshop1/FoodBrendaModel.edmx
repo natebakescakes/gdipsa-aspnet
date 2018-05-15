@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FoodBrendaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Dishes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="DishOptions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OptionName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="DishSizes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Size" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="OrderDate" Type="datetime" Nullable="false" />
+          <Property Name="DishId" Type="int" Nullable="false" />
+          <Property Name="DishSize" Type="int" Nullable="false" />
+          <Property Name="DishOption" Type="int" />
+        </EntityType>
+        <Association Name="Order_DishId_FK_1">
+          <End Role="Dishes" Type="Self.Dishes" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dishes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="DishId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Order_DishOption_FK_3">
+          <End Role="DishOptions" Type="Self.DishOptions" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DishOptions">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="DishOption" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Order_DishSize_FK_2">
+          <End Role="DishSizes" Type="Self.DishSizes" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DishSizes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="DishSize" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FoodBrendaModelStoreContainer">
+          <EntitySet Name="Dishes" EntityType="Self.Dishes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DishOptions" EntityType="Self.DishOptions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DishSizes" EntityType="Self.DishSizes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="Order_DishId_FK_1" Association="Self.Order_DishId_FK_1">
+            <End Role="Dishes" EntitySet="Dishes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="Order_DishOption_FK_3" Association="Self.Order_DishOption_FK_3">
+            <End Role="DishOptions" EntitySet="DishOptions" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="Order_DishSize_FK_2" Association="Self.Order_DishSize_FK_2">
+            <End Role="DishSizes" EntitySet="DishSizes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FoodBrendaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Dish">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Orders" Relationship="Self.Order_DishId_FK_1" FromRole="Dishes" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="DishOption">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OptionName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Orders" Relationship="Self.Order_DishOption_FK_3" FromRole="DishOptions" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="DishSize">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Size" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Orders" Relationship="Self.Order_DishSize_FK_2" FromRole="DishSizes" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DishId" Type="Int32" Nullable="false" />
+          <Property Name="DishSize" Type="Int32" Nullable="false" />
+          <Property Name="DishOption" Type="Int32" />
+          <NavigationProperty Name="Dish" Relationship="Self.Order_DishId_FK_1" FromRole="Orders" ToRole="Dishes" />
+          <NavigationProperty Name="DishOption1" Relationship="Self.Order_DishOption_FK_3" FromRole="Orders" ToRole="DishOptions" />
+          <NavigationProperty Name="DishSize1" Relationship="Self.Order_DishSize_FK_2" FromRole="Orders" ToRole="DishSizes" />
+        </EntityType>
+        <Association Name="Order_DishId_FK_1">
+          <End Role="Dishes" Type="Self.Dish" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dishes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="DishId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Order_DishOption_FK_3">
+          <End Role="DishOptions" Type="Self.DishOption" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DishOptions">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="DishOption" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Order_DishSize_FK_2">
+          <End Role="DishSizes" Type="Self.DishSize" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DishSizes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="DishSize" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FoodBrendaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Dishes" EntityType="Self.Dish" />
+          <EntitySet Name="DishOptions" EntityType="Self.DishOption" />
+          <EntitySet Name="DishSizes" EntityType="Self.DishSize" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <AssociationSet Name="Order_DishId_FK_1" Association="Self.Order_DishId_FK_1">
+            <End Role="Dishes" EntitySet="Dishes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="Order_DishOption_FK_3" Association="Self.Order_DishOption_FK_3">
+            <End Role="DishOptions" EntitySet="DishOptions" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="Order_DishSize_FK_2" Association="Self.Order_DishSize_FK_2">
+            <End Role="DishSizes" EntitySet="DishSizes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FoodBrendaModelStoreContainer" CdmEntityContainer="FoodBrendaEntities">
+          <EntitySetMapping Name="Dishes">
+            <EntityTypeMapping TypeName="FoodBrendaModel.Dish">
+              <MappingFragment StoreEntitySet="Dishes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DishOptions">
+            <EntityTypeMapping TypeName="FoodBrendaModel.DishOption">
+              <MappingFragment StoreEntitySet="DishOptions">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OptionName" ColumnName="OptionName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DishSizes">
+            <EntityTypeMapping TypeName="FoodBrendaModel.DishSize">
+              <MappingFragment StoreEntitySet="DishSizes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="FoodBrendaModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="DishId" ColumnName="DishId" />
+                <ScalarProperty Name="DishSize" ColumnName="DishSize" />
+                <ScalarProperty Name="DishOption" ColumnName="DishOption" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
