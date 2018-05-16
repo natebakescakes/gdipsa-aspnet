@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="WebApplication4.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 612px;
+        }
+        .auto-style2 {
+            width: 278px;
+        }
+    </style>
+</head>
+<body style="width: 2699px">
+    <form id="form1" runat="server">
+        <div>
+            <table>
+                <tr>
+                    <td class="auto-style2">
+                        TOP CORNER
+                    </td>
+                    <td class="auto-style1">
+                        <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">
+                        <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
+                        </asp:Menu>
+                        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                    </td>
+                    <td class="auto-style1">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
