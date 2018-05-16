@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApplication3.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default2.aspx.cs" Inherits="WebApplication3.Default2" %>
 
 <!DOCTYPE html>
 
@@ -13,9 +13,6 @@
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         </div>
         <asp:Button ID="Button1" runat="server" Text="Button" />
-        <p>
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default2.aspx">HyperLink</asp:HyperLink>
-        </p>
     </form>
 </body>
 </html>

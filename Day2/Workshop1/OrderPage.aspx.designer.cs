@@ -13,22 +13,40 @@ namespace Workshop1 {
     public partial class OrderPage {
         
         /// <summary>
-        /// form1 control.
+        /// OrderFormLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.HyperLink OrderFormLink;
         
         /// <summary>
-        /// Label1 control.
+        /// OrderSummaryLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.HyperLink OrderSummaryLink;
+        
+        /// <summary>
+        /// form2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
+        
+        /// <summary>
+        /// Label5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
         /// DishDropDownList control.
@@ -40,13 +58,13 @@ namespace Workshop1 {
         protected global::System.Web.UI.WebControls.DropDownList DishDropDownList;
         
         /// <summary>
-        /// Label2 control.
+        /// Label6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
         /// SizeDropDownList control.
@@ -58,13 +76,13 @@ namespace Workshop1 {
         protected global::System.Web.UI.WebControls.DropDownList SizeDropDownList;
         
         /// <summary>
-        /// Label3 control.
+        /// Label7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
         /// OptionRadioButtonList control.
@@ -76,13 +94,13 @@ namespace Workshop1 {
         protected global::System.Web.UI.WebControls.RadioButtonList OptionRadioButtonList;
         
         /// <summary>
-        /// Label4 control.
+        /// Label8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label Label8;
         
         /// <summary>
         /// UserIdTextBox control.
@@ -94,21 +112,21 @@ namespace Workshop1 {
         protected global::System.Web.UI.WebControls.TextBox UserIdTextBox;
         
         /// <summary>
-        /// Button1 control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// BackLink control.
+        /// HyperLink1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink BackLink;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
     }
 }
