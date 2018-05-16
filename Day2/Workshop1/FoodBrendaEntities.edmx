@@ -133,48 +133,21 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="DishId" Type="Int32" Nullable="false" />
-          <Property Name="DishSize" Type="Int32" Nullable="false" />
-          <Property Name="DishOption" Type="Int32" />
           <NavigationProperty Name="Dish" Relationship="Self.Order_DishId_FK_1" FromRole="Orders" ToRole="Dishes" />
-          <NavigationProperty Name="DishOption1" Relationship="Self.Order_DishOption_FK_3" FromRole="Orders" ToRole="DishOptions" />
-          <NavigationProperty Name="DishSize1" Relationship="Self.Order_DishSize_FK_2" FromRole="Orders" ToRole="DishSizes" />
+          <NavigationProperty Name="DishOption" Relationship="Self.Order_DishOption_FK_3" FromRole="Orders" ToRole="DishOptions" />
+          <NavigationProperty Name="DishSize" Relationship="Self.Order_DishSize_FK_2" FromRole="Orders" ToRole="DishSizes" />
         </EntityType>
         <Association Name="Order_DishId_FK_1">
           <End Role="Dishes" Type="Self.Dish" Multiplicity="1" />
           <End Role="Orders" Type="Self.Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Dishes">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Orders">
-              <PropertyRef Name="DishId" />
-            </Dependent>
-          </ReferentialConstraint>
         </Association>
         <Association Name="Order_DishOption_FK_3">
           <End Role="DishOptions" Type="Self.DishOption" Multiplicity="0..1" />
           <End Role="Orders" Type="Self.Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DishOptions">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Orders">
-              <PropertyRef Name="DishOption" />
-            </Dependent>
-          </ReferentialConstraint>
         </Association>
         <Association Name="Order_DishSize_FK_2">
           <End Role="DishSizes" Type="Self.DishSize" Multiplicity="1" />
           <End Role="Orders" Type="Self.Order" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DishSizes">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Orders">
-              <PropertyRef Name="DishSize" />
-            </Dependent>
-          </ReferentialConstraint>
         </Association>
         <EntityContainer Name="FoodBrendaEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Dishes" EntityType="Self.Dish" />
@@ -233,12 +206,34 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-                <ScalarProperty Name="DishId" ColumnName="DishId" />
-                <ScalarProperty Name="DishSize" ColumnName="DishSize" />
-                <ScalarProperty Name="DishOption" ColumnName="DishOption" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <AssociationSetMapping Name="Order_DishId_FK_1" TypeName="FoodBrendaModel.Order_DishId_FK_1" StoreEntitySet="Orders">
+            <EndProperty Name="Dishes">
+              <ScalarProperty Name="Id" ColumnName="DishId" />
+            </EndProperty>
+            <EndProperty Name="Orders">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Order_DishOption_FK_3" TypeName="FoodBrendaModel.Order_DishOption_FK_3" StoreEntitySet="Orders">
+            <EndProperty Name="DishOptions">
+              <ScalarProperty Name="Id" ColumnName="DishOption" />
+            </EndProperty>
+            <EndProperty Name="Orders">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="DishOption" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Order_DishSize_FK_2" TypeName="FoodBrendaModel.Order_DishSize_FK_2" StoreEntitySet="Orders">
+            <EndProperty Name="DishSizes">
+              <ScalarProperty Name="Id" ColumnName="DishSize" />
+            </EndProperty>
+            <EndProperty Name="Orders">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -254,7 +249,7 @@
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

@@ -23,13 +23,13 @@ namespace Workshop1
             OrderIdLabel.Text = orderId.ToString();
             UserIdTextBox.Text = order.UserId.ToString();
             DishTextBox.Text = order.Dish.Name;
-            SizeTextBox.Text = order.DishSize1.Size;
+            SizeTextBox.Text = order.DishSize.Size;
 
             foreach (var option in context.DishOptions)
             {
                 OptionRadioButtonList.Items.Add(new ListItem(option.OptionName, option.Id.ToString()));
 
-                if (option.Id == order.DishOption)
+                if (option.Id == order.DishOption.Id)
                 {
                     OptionRadioButtonList.Items[OptionRadioButtonList.Items.Count - 1].Selected = true;
                 }

@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="151555216efb4e58bd5ed695ca6fd5f5" Name="Diagram1">
-        <EntityTypeShape EntityType="FoodBrendaModel.Dish" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FoodBrendaModel.DishOption" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FoodBrendaModel.DishSize" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FoodBrendaModel.Order" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+      <Diagram DiagramId="eac9a1ce2aed4c7cba7e04430e48f90c" Name="Diagram1">
+        <EntityTypeShape EntityType="FoodBrendaModel.Dish" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodBrendaModel.DishOption" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodBrendaModel.DishSize" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodBrendaModel.Order" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="FoodBrendaModel.Order_DishId_FK_1" ManuallyRouted="false" />
         <AssociationConnector Association="FoodBrendaModel.Order_DishOption_FK_3" ManuallyRouted="false" />
         <AssociationConnector Association="FoodBrendaModel.Order_DishSize_FK_2" ManuallyRouted="false" />

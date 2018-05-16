@@ -17,12 +17,9 @@ namespace Workshop1
         public int Id { get; set; }
         public string UserId { get; set; }
         public System.DateTime OrderDate { get; set; }
-        public int DishId { get; set; }
-        public int DishSize { get; set; }
-        public Nullable<int> DishOption { get; set; }
     
         public virtual Dish Dish { get; set; }
-        public virtual DishOption DishOption1 { get; set; }
-        public virtual DishSize DishSize1 { get; set; }
+        public virtual DishOption DishOption { get; set; }
+        public virtual DishSize DishSize { get; set; }
     }
 }

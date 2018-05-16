@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Nate\Dropbox\NUS GDipSA\SA4108 Mobile Application Development\WNET\gdipsa-aspnet\Day2\Workshop1\FoodBrendaModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Nate\Dropbox\NUS GDipSA\SA4108 Mobile Application Development\WNET\gdipsa-aspnet\Day2\Workshop1\FoodBrendaEntities.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
