@@ -56,3 +56,5 @@ C:\Users\Nate\Dropbox\NUS GDipSA\SA4108 Mobile Application Development\WNET\gdip
 C:\Users\Nate\Dropbox\NUS GDipSA\SA4108 Mobile Application Development\WNET\gdipsa-aspnet\WebApplication2\obj\Debug\WebApplication2.csproj.CopyComplete
 C:\Users\Nate\Dropbox\NUS GDipSA\SA4108 Mobile Application Development\WNET\gdipsa-aspnet\WebApplication2\obj\Debug\WebApplication2.dll
 C:\Users\Nate\Dropbox\NUS GDipSA\SA4108 Mobile Application Development\WNET\gdipsa-aspnet\WebApplication2\obj\Debug\WebApplication2.pdb
+C:\Users\Nate\Dropbox\NUS GDipSA\SA4108 Mobile Application Development\WNET\gdipsa-aspnet\Day2\WebApplication2\obj\Debug\WebApplication2.dll
+C:\Users\Nate\Dropbox\NUS GDipSA\SA4108 Mobile Application Development\WNET\gdipsa-aspnet\Day2\WebApplication2\obj\Debug\WebApplication2.pdb
