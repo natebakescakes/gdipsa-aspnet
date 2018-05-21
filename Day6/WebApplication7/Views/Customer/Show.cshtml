@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Customers List</h2>
+<ul>
+    @for (int i = 0; i < ViewBag.CustList.Count; i++)
+    {
+        <li>
+            <a href="Show/@ViewBag.CustList[i].CustomerID">
+                @ViewBag.CustList[i].CompanyName
+            </a>
+        </li>
+    }
+</ul>
+

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+@{ var cust = ViewBag.Customer;
+    <h2>@cust.CompanyName</h2>
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>@cust.CustomerID</td>
+        </tr>
+        <tr>
+            <td>@cust.ContactTitle</td>
+            <td>@cust.ContactName</td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>@cust.Address</td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>@cust.City</td>
+        </tr>
+        <tr>
+            <td>PostalCode</td>
+            <td>@cust.PostalCode</td>
+        </tr>
+    </table>
+}
