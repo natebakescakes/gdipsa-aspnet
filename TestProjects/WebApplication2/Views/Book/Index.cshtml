@@ -1,0 +1,43 @@
+﻿<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>OrderedBy</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        table {
+            width: 100%;
+            border: solid;
+            border-width: 1px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Books</h1>
+    <div class="container">
+        <div class="row">
+            @foreach (var book in ViewBag.books)
+            {
+                <div class="col-xs-4 col-sm-3 col-md-2">
+                    <table>
+                        <tr>
+                            <img src="@String.Format("http://covers.openlibrary.org/b/{0}/{1}-{2}.jpg", "isbn", book.ISBN, "M")" />
+                            <td width="30%">Title</td>
+                            <td>@book.Title</td>
+                        </tr>
+                        <tr>
+                            <td>Author</td>
+                            <td>@book.Author</td>
+                        </tr>
+                        <tr>
+                            <td>Price</td>
+                            <td>@string.Format("{0:C}", @book.Price)</td>
+                        </tr>
+                    </table>
+                    <br />
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
